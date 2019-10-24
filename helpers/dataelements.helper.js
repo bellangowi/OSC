@@ -1,5 +1,6 @@
 const _ = require('lodash');
-
+const fileManipulation = require('./file-manipulation.helper');
+const dataManipulation = require('./data-manipulation.helper');
 async function discoveringAndSaveDataElements(
     serverUrl,
     headers,
@@ -34,7 +35,7 @@ async function discoveringAndSaveDataElements(
     }
 }
 
-async function getdataElementsPaginations(serverUrl, headers) {
+async function getDataElementPaginations(serverUrl, headers) {
     const pageSize = 200;
     const url = `${serverUrl}/api/dataElements?fields=none&pageSize=${pageSize}`;
     const filters = [];

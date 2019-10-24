@@ -1,7 +1,6 @@
-const {
-    discoveringFormData,
-    getFilterParameter,
-} = require('./helpers/index');
+
+const dataElements = require('./helpers/dataelements.helper');
+
 const {
     sourceConfig,
 } = require('./config/index');
@@ -16,11 +15,11 @@ const outputFolder = sourceConfig.output_folder
 
 startApp();
 async function startApp() {
-    await discoveringAndSaveFormData(start, end);
+    await discoveringAndSaveFormData();
     console.log(data)
 }
 
-async function discoveringAndSaveFormData(start, end) {
+async function discoveringAndSaveFormData() {
     let formMapping = {}
     try {
         const filters = await getFilterParameter(souceServerUrl, sourceHeaders);
